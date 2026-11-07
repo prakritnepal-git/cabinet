@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual-Alcove Built-In & Rattan Door Master Engineering Manual</title>
+<style>
+  :root {
+    --swedish-blue: #4A6B82;
+    --swedish-dark: #2C4251;
+    --butcher-oak: #C88A4B;
+    --rattan-gold: #D4A359;
+    --pine-raw: #F3E5AB;
+    --ply-sand: #E2C799;
+    --bg-main: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --border-color: #CBD5E1;
+    --accent-red: #DC2626;
+    --accent-green: #16A34A;
+    --accent-amber: #D97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding-bottom: 60px;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--swedish-dark), var(--swedish-blue));
+    color: white;
+    padding: 22px 28px;
+    border-bottom: 4px solid var(--butcher-oak);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  header h1 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; }
+  .spec-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pill {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  nav {
+    background: #1E293B;
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 78px;
+    z-index: 99;
+  }
+  .nav-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+  }
+  .tab-btn {
+    background: transparent;
+    color: #94A3B8;
+    border: none;
+    padding: 13px 16px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover { color: white; background: rgba(255,255,255,0.05); }
+  .tab-btn.active {
+    color: white;
+    border-bottom-color: var(--butcher-oak);
+    background: rgba(255,255,255,0.08);
+  }
+
+  main {
+    max-width: 1440px;
+    margin: 26px auto;
+    padding: 0 20px;
+  }
+  .tab-section { display: none; }
+  .tab-section.active { display: block; }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--swedish-dark);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 22px;
+  }
+  @media (max-width: 600px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  .callout {
+    padding: 13px 16px;
+    border-radius: 6px;
+    margin: 12px 0;
+    font-size: 0.9rem;
+    border-left: 4px solid;
+  }
+  .callout-warn { background: #FEF2F2; border-color: var(--accent-red); color: #7F1D1D; }
+  .callout-tip { background: #F0FDF4; border-color: var(--accent-green); color: #14532D; }
+  .callout-info { background: #FFFBEB; border-color: var(--accent-amber); color: #78350F; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-top: 8px;
+  }
+  th, td {
+    padding: 9px 11px;
+    text-align: left;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  th {
+    background: #F1F5F9;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
+    font-size: 0.73rem;
+    letter-spacing: 0.05em;
+  }
+  tr.checked-row td {
+    text-decoration: line-through;
+    color: #94A3B8;
+    background: #F8FAFC;
+  }
+  input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: var(--swedish-blue);
+  }
+
+  .svg-box {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    padding: 14px;
+    margin: 10px 0;
+    overflow-x: auto;
+    text-align: center;
+  }
+  svg { max-width: 100%; height: auto; font-family: monospace; }
+
+  .step-badge {
+    background: var(--swedish-blue);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .rattan-badge {
+    background: var(--butcher-oak);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .time-badge {
+    background: #F1F5F9;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  ul.step-list { padding-left: 20px; margin-top: 8px; }
+  ul.step-list li { margin-bottom: 8px; }
+  code {
+    background: #F1F5F9;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+    color: #0F172A;
+    font-family: monospace;
+  }
+  .btn-print {
+    background: var(--butcher-oak);
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  @media print {
+    header, nav, .btn-print { position: static; }
+    .tab-section { display: block !important; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div>
+      <h1>Garden Cottage Dual Built-In & DIY Rattan Door Manual</h1>
+      <p style="font-size: 0.86rem; opacity: 0.9;">2 Separate Base Boxes • 4 DIY Rattan Doors (12.75" x 26.0") • Flat 2x4 Sleepers • No Table Saw</p>
+    </div>
+    <div class="spec-pills">
+      <span class="pill">Left: 53.5" W</span>
+      <span class="pill">Right: 52.5" W</span>
+      <span class="pill">Ceiling: 86.5" H</span>
+      <span class="pill">4 Rattan Doors: 12.75" W x 26.0" H</span>
+      <button class="btn-print" onclick="window.print()">Print All Blueprints</button>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-container">
+    <button class="tab-btn active" onclick="openTab('tab-elevations', this)">1. Master Elevations</button>
+    <button class="tab-btn" onclick="openTab('tab-bom', this)">2. Master Shopping List & Tools</button>
+    <button class="tab-btn" onclick="openTab('tab-cuts', this)">3. Cut Sheets & Plywood Maps</button>
+    <button class="tab-btn" onclick="openTab('tab-left', this)">4. Left Side Build</button>
+    <button class="tab-btn" onclick="openTab('tab-right', this)">5. Right Desk Build</button>
+    <button class="tab-btn" onclick="openTab('tab-rattan', this)">6. DIY Rattan Doors (Groove & Assembly)</button>
+    <button class="tab-btn" onclick="openTab('tab-trim', this)">7. Face Frames, Header & Crown</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ==================== TAB 1: MASTER ELEVATIONS ==================== -->
+  <section id="tab-elevations" class="tab-section active">
+    <div class="card">
+      <div class="card-title">
+        <span>Full Wall Architectural Elevation (With 4 Rattan Double Doors on Left Base)</span>
+        <span class="time-badge">4 Doors @ 12.75" W x 26.0" H Each</span>
+      </div>
+      <p>Each of the two <code>26.5" W</code> left base boxes has a <code>24.5" W x 25.0" H</code> frame opening covered by <strong>two <code>12.75" W x 26.0" H</code> rattan doors</strong> (4 doors total).</p>
+
+      <div class="svg-box">
+        <svg viewBox="0 0 1100 540" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="rattanMesh" width="8" height="8" patternUnits="userSpaceOnUse">
+              <rect width="8" height="8" fill="#D4A359"/>
+              <path d="M 0,4 L 4,0 L 8,4 L 4,8 Z" fill="none" stroke="#78350F" stroke-width="0.9"/>
+              <circle cx="4" cy="4" r="1.3" fill="#2C4251"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="1100" height="540" fill="#F8FAFC"/>
+          <!-- Ceiling Line -->
+          <line x1="40" y1="40" x2="1060" y2="40" stroke="#0F172A" stroke-width="3"/>
+          <text x="550" y="28" text-anchor="middle" font-weight="bold" font-size="13" fill="#0F172A">CEILING LINE (86.5" TOTAL HEIGHT)</text>
+
+          <!-- Floor Line -->
+          <line x1="40" y1="472.5" x2="1060" y2="472.5" stroke="#78350F" stroke-width="4"/>
+          <text x="550" y="495" text-anchor="middle" font-weight="bold" font-size="13" fill="#78350F">NATURAL OAK FLOOR (0.0" H)</text>
+
+          <!-- ================= LEFT ALCOVE (53.5" W -> 267.5px) ================= -->
+          <g transform="translate(80, 40)">
+            <rect x="0" y="0" width="267.5" height="277.5" fill="#4A6B82" stroke="#1E293B" stroke-width="2"/>
+            <rect x="-4" y="0" width="275.5" height="17.5" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <text x="133" y="12" text-anchor="middle" fill="#FFF" font-size="10" font-weight="bold">1x4 HEADER + 3.25" CROWN</text>
+
+            <!-- Upper Bays -->
+            <rect x="7.5" y="17.5" width="122" height="60" fill="#365368"/>
+            <rect x="138" y="17.5" width="122" height="60" fill="#365368"/>
+            <rect x="7.5" y="85" width="122" height="60" fill="#365368"/>
+            <rect x="138" y="85" width="122" height="60" fill="#365368"/>
+            <rect x="7.5" y="152.5" width="122" height="60" fill="#365368"/>
+            <rect x="138" y="152.5" width="122" height="60" fill="#365368"/>
+            <rect x="7.5" y="220" width="122" height="57.5" fill="#365368"/>
+            <rect x="138" y="220" width="122" height="57.5" fill="#365368"/>
+
+            <text x="68" y="125" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">UPPER BAY 1</text>
+            <text x="199" y="125" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">UPPER BAY 2</text>
+
+            <!-- Butcher Block Countertop -->
+            <rect x="-3" y="277.5" width="273.5" height="8" fill="#C88A4B" stroke="#78350F" stroke-width="1.5"/>
+
+            <!-- Base Cabinets (28.0" = 140px) -->
+            <rect x="0" y="285.5" width="267.5" height="140" fill="#4A6B82" stroke="#1E293B" stroke-width="2"/>
+
+            <!-- 4 RATTAN DOORS (12.75" W x 26.0" H each) -->
+            <!-- Box 1: Door 1 & Door 2 -->
+            <rect x="6" y="290" width="60" height="130" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="16" y="300" width="40" height="110" fill="url(#rattanMesh)" stroke="#0F172A"/>
+            <circle cx="61" cy="355" r="2.5" fill="#FDE047"/>
+
+            <rect x="68" y="290" width="60" height="130" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="78" y="300" width="40" height="110" fill="url(#rattanMesh)" stroke="#0F172A"/>
+            <circle cx="73" cy="355" r="2.5" fill="#FDE047"/>
+
+            <!-- Box 2: Door 3 & Door 4 -->
+            <rect x="139" y="290" width="60" height="130" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="149" y="300" width="40" height="110" fill="url(#rattanMesh)" stroke="#0F172A"/>
+            <circle cx="194" cy="355" r="2.5" fill="#FDE047"/>
+
+            <rect x="201" y="290" width="60" height="130" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="211" y="300" width="40" height="110" fill="url(#rattanMesh)" stroke="#0F172A"/>
+            <circle cx="206" cy="355" r="2.5" fill="#FDE047"/>
+
+            <!-- Flat 2x4 Sleeper Base -->
+            <rect x="0" y="425.5" width="267.5" height="7.5" fill="#D97706" stroke="#0F172A"/>
+            <text x="133" y="448" text-anchor="middle" fill="#0F172A" font-weight="bold" font-size="11">LEFT: 4 RATTAN DOORS (12.75" W x 26.0" H)</text>
+          </g>
+
+          <!-- ================= CENTER FIREPLACE ================= -->
+          <g transform="translate(347.5, 40)">
+            <rect x="0" y="0" width="320" height="432.5" fill="#5B7A8C" stroke="#1E293B" stroke-width="1.5"/>
+            <rect x="55" y="55" width="210" height="120" fill="#0F172A" stroke="#334155" stroke-width="3"/>
+            <text x="160" y="118" text-anchor="middle" fill="#94A3B8" font-size="12" font-weight="bold">WALL-MOUNTED TV</text>
+            <rect x="10" y="220" width="300" height="18" fill="#B45309" stroke="#78350F" stroke-width="2"/>
+            <rect x="20" y="238" width="280" height="194.5" fill="#991B1B" stroke="#7F1D1D" stroke-width="2"/>
+            <rect x="65" y="275" width="190" height="157.5" fill="#1E293B"/>
+            <text x="160" y="355" text-anchor="middle" fill="#94A3B8" font-size="12" font-weight="bold">BRICK FIREPLACE</text>
+          </g>
+
+          <!-- ================= RIGHT ALCOVE ================= -->
+          <g transform="translate(667.5, 40)">
+            <rect x="0" y="0" width="262.5" height="277.5" fill="#4A6B82" stroke="#1E293B" stroke-width="2"/>
+            <rect x="0" y="0" width="266.5" height="17.5" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="7.5" y="17.5" width="119.5" height="65" fill="#365368"/>
+            <rect x="135" y="17.5" width="119.5" height="65" fill="#365368"/>
+            <rect x="7.5" y="90" width="119.5" height="65" fill="#365368"/>
+            <rect x="135" y="90" width="119.5" height="65" fill="#365368"/>
+            <rect x="7.5" y="162.5" width="247.5" height="115" fill="#5B7A8C"/>
+            <text x="131" y="215" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">OPEN MONITOR ALCOVE (50.5" W)</text>
+            <rect x="0" y="277.5" width="262.5" height="8" fill="#C88A4B" stroke="#78350F" stroke-width="1.5"/>
+            <rect x="0" y="285.5" width="10" height="147" fill="#2C4251"/>
+            <rect x="252.5" y="285.5" width="10" height="147" fill="#2C4251"/>
+            <rect x="10" y="285.5" width="242.5" height="22" fill="#4A6B82" stroke="#1E293B"/>
+            <rect x="10" y="307.5" width="242.5" height="125" fill="#E2E8F0"/>
+            <text x="131" y="370" text-anchor="middle" fill="#0F172A" font-size="11" font-weight="bold">OPEN CHAIR KNEE SPACE</text>
+            <text x="131" y="448" text-anchor="middle" fill="#0F172A" font-weight="bold" font-size="11">RIGHT ALCOVE: 52.5" WIDE</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 2: MASTER SHOPPING LIST & TOOLS ==================== -->
+  <section id="tab-bom" class="tab-section">
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">
+          <span>Updated Master Material Shopping List (Includes DIY Rattan Doors)</span>
+          <span class="step-badge">Check Off As Purchased</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Buy</th>
+              <th>Qty</th>
+              <th>Material / Item Description</th>
+              <th>Allocation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" id="bom-1" onchange="toggleRow(this)"></td>
+              <td><strong>2 Sheets</strong></td>
+              <td><code>3/4" x 4' x 8'</code> Sande or BC Sanded Pine Plywood</td>
+              <td>Two 26.5" left base boxes + Right desk support legs & cleats</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-2" onchange="toggleRow(this)"></td>
+              <td><strong>2 Boards</strong></td>
+              <td><code>2" x 4" x 8'</code> Kiln-Dried Framing Studs</td>
+              <td>Laid flat (<code>1.5"</code> high) under Left base boxes for easy leveling</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-3" onchange="toggleRow(this)"></td>
+              <td><strong>9 Boards</strong></td>
+              <td><code>1" x 12" x 8'</code> Pre-Primed Pine Boards (<code>11.25"</code> actual)</td>
+              <td>All upper vertical pillars & 11.25" deep upper shelves</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-4" onchange="toggleRow(this)"></td>
+              <td><strong>9 Boards</strong></td>
+              <td><code>1" x 2" x 8'</code> Pre-Primed Pine Trim (<code>1.5"</code> actual)</td>
+              <td>Front face frames on base boxes & upper bookcases</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-5" onchange="toggleRow(this)"></td>
+              <td><strong>3 Boards</strong></td>
+              <td><code>1" x 4" x 8'</code> Pre-Primed Pine Trim (<code>3.5"</code> actual)</td>
+              <td>Top ceiling header rail (<code>86.5"</code> line) + bottom base trim</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-6" onchange="toggleRow(this)"></td>
+              <td><strong>2 Boards</strong></td>
+              <td><code>3-1/4" x 8'</code> Primed Crown or Cove Moulding</td>
+              <td>Top decorative ceiling transition over the 1x4 header</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-7" onchange="toggleRow(this)"></td>
+              <td><strong>2 Slabs</strong></td>
+              <td><code>6 ft. x 25 in. x 1.5 in.</code> Unfinished Hevea Butcher Block</td>
+              <td>Rip to <code>18" D</code>; crosscut Left to <code>53.5"</code>, Right to <code>52.5"</code></td>
+            </tr>
+            <!-- NEW RATTAN DOOR ITEMS -->
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="bom-14" onchange="toggleRow(this)"></td>
+              <td><strong>4 Boards</strong></td>
+              <td><strong>[DOOR FRAMES]</strong> <code>1" x 3" x 8'</code> Select Pine or Poplar Boards (<code>0.75" x 2.5"</code> actual)</td>
+              <td>Builds all 8 vertical stiles (<code>26.0"</code>) & 8 rails (<code>7.75"</code>) for the 4 doors</td>
+            </tr>
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="bom-15" onchange="toggleRow(this)"></td>
+              <td><strong>1 Roll</strong></td>
+              <td><strong>[RATTAN MESH]</strong> <code>24" W x 5 ft. (or 8 ft.)</code> Natural Rattan Cane Webbing Roll</td>
+              <td>Cut four pieces at <code>8.5" W x 21.75" H</code> (one for each door panel)</td>
+            </tr>
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="bom-16" onchange="toggleRow(this)"></td>
+              <td><strong>3 Strips</strong></td>
+              <td><strong>[BACKING STRIPS]</strong> <code>1/4" x 3/8" x 8'</code> Pine Screen Molding / Lattice Strip</td>
+              <td>Glues & pins into the rear routed groove over the rattan staples</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-9" onchange="toggleRow(this)"></td>
+              <td><strong>4 Pairs (8)</strong></td>
+              <td>Blum Compact 38N Soft-Close Hinges (<code>1/2" Overlay</code> Face-Frame)</td>
+              <td>2 hinges per door x 4 doors = 8 hinges total</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-10" onchange="toggleRow(this)"></td>
+              <td><strong>1 Box</strong></td>
+              <td><code>1-1/4"</code> Coarse-Thread Kreg Pocket-Hole Screws (250 ct)</td>
+              <td>Joins plywood boxes, 1x12 shelves, AND the 1x3 rattan door frames</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-11" onchange="toggleRow(this)"></td>
+              <td><strong>1 Box</strong></td>
+              <td><code>#8 x 3"</code> Washer-Head Cabinet Screws + <code>3/8"</code> T50 Staples</td>
+              <td>3" screws for wall studs; 3/8" staples to tack soaked rattan into groove</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="bom-13" onchange="toggleRow(this)"></td>
+              <td><strong>1 Kit</strong></td>
+              <td>1 Gal BM Advance Satin (<em>Water's Edge</em>), Zinsser 1-2-3, Dewaxed Shellac + Satin Poly</td>
+              <td>Paint door frames BEFORE stapling the natural rattan webbing in!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>Required Tools Checklist (Updated for DIY Rattan Doors)</span>
+          <span class="rattan-badge">Includes Router & Hinge Jig</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Have</th>
+              <th>Tool / Accessory</th>
+              <th>Specific Role in This Build</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" id="tool-1" onchange="toggleRow(this)"></td>
+              <td><strong>Circular Saw + Straight-Edge Guide</strong></td>
+              <td>Cuts the 3/4" plywood sheets and rips the 1.5" butcher block in 2 passes.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="tool-3" onchange="toggleRow(this)"></td>
+              <td><strong>12" Compound Miter Saw</strong></td>
+              <td>Cuts all <code>1x12</code> shelves, <code>1x2</code> face frames, <code>1x3</code> door stiles/rails, and crown.</td>
+            </tr>
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="tool-11" onchange="toggleRow(this)"></td>
+              <td><strong>[DOORS] Palm Router / Plunge Router</strong></td>
+              <td>Cuts the stepped groove (rabbet) around the inside back of the 4 door frames.</td>
+            </tr>
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="tool-12" onchange="toggleRow(this)"></td>
+              <td><strong>[DOORS] 3/8" Rabbeting Bit (With Bearing)</strong></td>
+              <td>Rides along the inside of the assembled 1x3 door frame to carve a <code>3/8" W x 3/8" D</code> step.</td>
+            </tr>
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="tool-13" onchange="toggleRow(this)"></td>
+              <td><strong>[DOORS] Kreg 35mm Concealed Hinge Jig</strong></td>
+              <td>Drills the 8 round 35mm cup holes on the back of your 1x3 door stiles at a <code>3mm–4mm</code> edge offset.</td>
+            </tr>
+            <tr style="background:#FFFBEB;">
+              <td><input type="checkbox" id="tool-14" onchange="toggleRow(this)"></td>
+              <td><strong>[DOORS] Heavy-Duty T50 Stapler (3/8" Staples)</strong></td>
+              <td>Staples the warm-water-soaked rattan webbing tightly into the routed back groove.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="tool-4" onchange="toggleRow(this)"></td>
+              <td><strong>Kreg Pocket-Hole Jig (Set to 3/4")</strong></td>
+              <td>Drills 2 pocket holes into each end of the <code>7.75"</code> door rails to assemble the doors.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="tool-5" onchange="toggleRow(this)"></td>
+              <td><strong>Brad Nailer (18ga) + Wood Glue</strong></td>
+              <td>Pins face frames, crown moulding, and the 1/4" backing strips inside the rattan groove.</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" id="tool-6" onchange="toggleRow(this)"></td>
+              <td><strong>Oscillating Multi-Tool + 4-ft Level + Shims</strong></td>
+              <td>Flush-cuts baseboards and levels the flat 2x4 floor sleepers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 3: CUT SHEETS & PLYWOOD MAPS ==================== -->
+  <section id="tab-cuts" class="tab-section">
+    <div class="card">
+      <div class="card-title">
+        <span>Complete Master Cut List (Now Including the 4 DIY Rattan Doors)</span>
+        <span class="time-badge">All Exact Dimensions</span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Cut</th>
+            <th>Part Name</th>
+            <th>Material</th>
+            <th>Qty</th>
+            <th>Exact Cut Dimensions</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#FFFBEB;">
+            <td><input type="checkbox" id="cut-d1" onchange="toggleRow(this)"></td>
+            <td><strong>[DOORS] Vertical Door Stiles</strong></td>
+            <td><code>1x3</code> Select Pine/Poplar (<code>2.5"</code> W)</td>
+            <td>8 pcs</td>
+            <td><code>26.0" H x 2.5" W</code></td>
+            <td>2 stiles per door x 4 doors = 8 pcs</td>
+          </tr>
+          <tr style="background:#FFFBEB;">
+            <td><input type="checkbox" id="cut-d2" onchange="toggleRow(this)"></td>
+            <td><strong>[DOORS] Horizontal Door Rails</strong></td>
+            <td><code>1x3</code> Select Pine/Poplar (<code>2.5"</code> W)</td>
+            <td>8 pcs</td>
+            <td><code>7.75" W x 2.5" H</code></td>
+            <td><code>2.5" + 7.75" + 2.5" = 12.75"</code> Total Door Width! Drill 2 pocket holes per end.</td>
+          </tr>
+          <tr style="background:#FFFBEB;">
+            <td><input type="checkbox" id="cut-d3" onchange="toggleRow(this)"></td>
+            <td><strong>[DOORS] Rattan Webbing Panels</strong></td>
+            <td><code>24"</code> Rattan Cane Roll</td>
+            <td>4 pcs</td>
+            <td><code>8.5" W x 21.75" H</code></td>
+            <td>Cut with heavy scissors; soak in warm water 30–45 mins before stapling.</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-1" onchange="toggleRow(this)"></td>
+            <td><strong>Left Floor Sleepers</strong></td>
+            <td><code>2x4</code> Studs</td>
+            <td>2 pcs</td>
+            <td><code>52.5" L</code> (Laid flat = <code>1.5" H</code>)</td>
+            <td>Shim level on floor, screw into studs</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-2" onchange="toggleRow(this)"></td>
+            <td><strong>Left Box Vertical Sides</strong></td>
+            <td><code>3/4"</code> Plywood</td>
+            <td>4 pcs</td>
+            <td><code>28.0" H x 16.5" D</code></td>
+            <td>2 for Box #1, 2 for Box #2</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-3" onchange="toggleRow(this)"></td>
+            <td><strong>Left Box Bottom Decks</strong></td>
+            <td><code>3/4"</code> Plywood</td>
+            <td>2 pcs</td>
+            <td><code>25.0" W x 16.5" D</code></td>
+            <td>Drill 3/4" pocket holes on underside ends</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-4" onchange="toggleRow(this)"></td>
+            <td><strong>Left Box Stretchers & Cleats</strong></td>
+            <td><code>3/4"</code> Plywood</td>
+            <td>4 pcs</td>
+            <td><code>25.0" W x 4.0" D</code></td>
+            <td>2 per box (1 top front stretcher, 1 top back cleat)</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-5" onchange="toggleRow(this)"></td>
+            <td><strong>Left Box Inside Shelves</strong></td>
+            <td><code>3/4"</code> Plywood</td>
+            <td>2 pcs</td>
+            <td><code>25.0" W x 15.0" D</code></td>
+            <td>1 per box for Xbox / Switch / storage</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-6" onchange="toggleRow(this)"></td>
+            <td><strong>Right Desk Vertical Legs</strong></td>
+            <td><code>3/4"</code> Plywood</td>
+            <td>2 pcs</td>
+            <td><code>29.5" H x 16.5" D</code></td>
+            <td>Sits directly on floor (matches 28"+1.5" left side)</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-7" onchange="toggleRow(this)"></td>
+            <td><strong>Right Desk Rear Ledger & Apron</strong></td>
+            <td><code>3/4"</code> Plywood</td>
+            <td>2 pcs</td>
+            <td><code>50.5" W x 3.5" H</code></td>
+            <td>1 screwed to back wall studs; 1 across front knee space</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-8" onchange="toggleRow(this)"></td>
+            <td><strong>Left & Right Butcher Blocks</strong></td>
+            <td><code>1.5"</code> Hevea Slabs</td>
+            <td>2 pcs</td>
+            <td>Left: <code>53.5"x18"</code> | Right: <code>52.5"x18"</code></td>
+            <td>Rip 25" slab to 18" D in 2 circular saw passes</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-10" onchange="toggleRow(this)"></td>
+            <td><strong>Left Upper Vertical Pillars</strong></td>
+            <td><code>1x12</code> Pine (<code>11.25"</code>)</td>
+            <td>3 pcs</td>
+            <td><code>55.0" H x 11.25" D</code></td>
+            <td>Left wall, Center divider, Right fireplace pillar</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-11" onchange="toggleRow(this)"></td>
+            <td><strong>Left Upper Shelves</strong></td>
+            <td><code>1x12</code> Pine (<code>11.25"</code>)</td>
+            <td>8 pcs</td>
+            <td><code>25-3/8" (25.375") W x 11.25" D</code></td>
+            <td>4 shelves per bay; pocket holes underneath</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="cut-12" onchange="toggleRow(this)"></td>
+            <td><strong>Right Upper Pillars & Shelves</strong></td>
+            <td><code>1x12</code> Pine (<code>11.25"</code>)</td>
+            <td>8 pcs</td>
+            <td>2 Pillars @ <code>55"</code>, 1 Span @ <code>50.5"</code>, 1 Center @ <code>31.25"</code>, 4 Cubbies @ <code>24-7/8"</code></td>
+            <td>Creates 23" monitor bay + 4 upper cubbies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 4: LEFT SIDE BUILD ==================== -->
+  <section id="tab-left" class="tab-section">
+    <div class="card">
+      <div class="card-title">
+        <span>Left Side Assembly Summary (2 Separate 26.5" Boxes on Flat 2x4s)</span>
+        <span class="step-badge">Alcove: 53.5" W</span>
+      </div>
+      <p>Follow the 3 core stages for the left side carcass before installing your 4 rattan doors (see Tab 6 for full Rattan Door fabrication):</p>
+      <ul class="step-list">
+        <li><strong>Stage 1 (Flat 2x4 Sleepers):</strong> Flush-cut left baseboard at <code>18.0"</code> from back wall. Lay two <code>52.5"</code> 2x4s flat on the floor (<code>1.5"</code> tall), shim dead level, and screw into floor/wall plate.</li>
+        <li><strong>Stage 2 (Two 26.5" W x 28.0" H Boxes):</strong> Assemble Box #1 and Box #2 from <code>16.5"</code> wide plywood strips using <code>3/4"</code> Kreg pocket holes. Set both boxes on the leveled 2x4s, clamp together, screw their middle walls together, and anchor to wall studs.</li>
+        <li><strong>Stage 3 (1x2 Face Frame):</strong> Glue and brad-nail three vertical <code>1x2</code> stiles (Left, Center, Right) and two horizontal <code>1x2</code> rails (Top, Bottom) across the front of the two boxes. This creates <strong>two identical <code>24.5" W x 25.0" H</code> openings</strong>—each opening gets a pair of <code>12.75" W x 26.0" H</code> rattan doors!</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 5: RIGHT DESK BUILD ==================== -->
+  <section id="tab-right" class="tab-section">
+    <div class="card">
+      <div class="card-title">
+        <span>Right Side Desk & Upper Hutch Summary</span>
+        <span class="step-badge">Alcove: 52.5" W</span>
+      </div>
+      <ul class="step-list">
+        <li><strong>Stage 1 (29.5" Side Legs & Rear Ledger):</strong> Stand the two <code>29.5" H x 16.5" D</code> plywood legs against the left brick fireplace and right window wall. Screw the <code>50.5" W x 3.5" H</code> rear ledger cleat into the back wall studs at <code>29.5"</code> high.</li>
+        <li><strong>Stage 2 (Front Stiffener Apron & Butcher Block):</strong> Pocket-screw the front <code>50.5" W x 3.5" H</code> apron between the top front corners of the two legs, nail a <code>1x2</code> face frame across it, and fasten the <code>52.5" x 18.0"</code> butcher block on top.</li>
+        <li><strong>Stage 3 (Upper Hutch):</strong> Assemble the two <code>55.0"</code> outer pillars, the <code>50.5"</code> full-span monitor shelf (at <code>23.0"</code> up), the <code>31.25"</code> upper center divider, and the four <code>24-7/8"</code> cubby shelves. Lift onto the desktop and anchor to upper studs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 6: DIY RATTAN DOORS (NEW DEDICATED SECTION) ==================== -->
+  <section id="tab-rattan" class="tab-section">
+    <div class="card">
+      <div class="card-title">
+        <span>Rattan Door Step 1: Exact Double-Door Sizing & 1x3 Pocket-Hole Frame</span>
+        <span class="rattan-badge">Build 4 Identical Doors: 12.75" W x 26.0" H</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <p>Why <strong><code>12.75" Wide x 26.0" High</code></strong> is the exact mathematical size when putting <strong>two doors on each box</strong>:</p>
+          <ul class="step-list">
+            <li><strong>The Opening Width Math:</strong> Each of your two base boxes has a <code>24.5" Wide</code> opening inside the <code>1x2</code> face frame. With a <code>1/2"</code> hinge overlay on the left stile (<code>+0.5"</code>) and right stile (<code>+0.5"</code>), the pair of doors must span <code>24.5" + 1.0" = 25.5" Total Width</code>. Divided by 2 doors = <strong><code>12.75" Wide per door</code></strong> (giving a crisp <code>1/16"</code> center reveal gap so they don't rub).</li>
+            <li><strong>The 1x3 Cut Math:</strong> A <code>1x3</code> select pine or poplar board is actually <strong><code>2.5" wide x 0.75" thick</code></strong>.
+              <br>• Cut <strong>2 Vertical Stiles</strong> to <strong><code>26.0" Long</code></strong>.
+              <br>• Cut <strong>2 Horizontal Rails</strong> to <strong><code>7.75" Long</code></strong> (<code>2.5" + 7.75" + 2.5" = 12.75" W</code>).</li>
+            <li><strong>Pocket-Hole Assembly:</strong> Set your Kreg jig to <code>3/4"</code>. Drill <strong>2 pocket holes on the back face</strong> at each end of the <code>7.75"</code> rails. Glue the ends and clamp/screw the rails between the <code>26.0"</code> stiles on a flat surface.</li>
+          </ul>
+        </div>
+
+        <div class="svg-box">
+          <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="460" height="320" fill="#F8FAFC"/>
+            <text x="230" y="20" text-anchor="middle" font-weight="bold" font-size="12" fill="#0F172A">BACK VIEW OF 1 DOOR FRAME (BUILD 4 IDENTICAL FRAMES)</text>
+
+            <!-- Total Width Callout -->
+            <line x1="120" y1="42" x2="340" y2="42" stroke="#0F172A" stroke-width="1.5"/>
+            <text x="230" y="37" text-anchor="middle" font-size="11" font-weight="bold" fill="#DC2626">12.75" TOTAL DOOR WIDTH</text>
+
+            <g transform="translate(120, 50)">
+              <!-- Left Stile (2.5" W = 43px, 26" H = 230px) -->
+              <rect x="0" y="0" width="43" height="230" fill="#F3E5AB" stroke="#0F172A" stroke-width="2"/>
+              <text x="21" y="115" text-anchor="middle" font-size="10" font-weight="bold" transform="rotate(-90 21,115)">LEFT STILE: 26.0" x 2.5"</text>
+
+              <!-- Right Stile (2.5" W = 43px) -->
+              <rect x="177" y="0" width="43" height="230" fill="#F3E5AB" stroke="#0F172A" stroke-width="2"/>
+              <text x="198" y="115" text-anchor="middle" font-size="10" font-weight="bold" transform="rotate(90 198,115)">RIGHT STILE: 26.0" x 2.5"</text>
+
+              <!-- Top Rail (7.75" W = 134px, 2.5" H = 43px) -->
+              <rect x="43" y="0" width="134" height="43" fill="#FDE68A" stroke="#0F172A" stroke-width="2"/>
+              <text x="110" y="20" text-anchor="middle" font-size="10" font-weight="bold">TOP RAIL</text>
+              <text x="110" y="33" text-anchor="middle" font-size="9.5">7.75" W x 2.5" H</text>
+              <!-- Pocket Holes on Top Rail -->
+              <ellipse cx="53" cy="12" rx="6" ry="3" fill="#475569"/>
+              <ellipse cx="53" cy="31" rx="6" ry="3" fill="#475569"/>
+              <ellipse cx="167" cy="12" rx="6" ry="3" fill="#475569"/>
+              <ellipse cx="167" cy="31" rx="6" ry="3" fill="#475569"/>
+
+              <!-- Bottom Rail -->
+              <rect x="43" y="187" width="134" height="43" fill="#FDE68A" stroke="#0F172A" stroke-width="2"/>
+              <text x="110" y="207" text-anchor="middle" font-size="10" font-weight="bold">BOTTOM RAIL</text>
+              <text x="110" y="220" text-anchor="middle" font-size="9.5">7.75" W x 2.5" H</text>
+              <!-- Pocket Holes on Bottom Rail -->
+              <ellipse cx="53" cy="199" rx="6" ry="3" fill="#475569"/>
+              <ellipse cx="53" cy="218" rx="6" ry="3" fill="#475569"/>
+              <ellipse cx="167" cy="199" rx="6" ry="3" fill="#475569"/>
+              <ellipse cx="167" cy="218" rx="6" ry="3" fill="#475569"/>
+
+              <!-- Center Open Window (7.75" W x 19.0" H) -->
+              <rect x="43" y="43" width="134" height="144" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <text x="110" y="108" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0F172A">INSIDE WINDOW</text>
+              <text x="110" y="123" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="bold">7.75" W x 19.0" H</text>
+            </g>
+
+            <!-- Height Callout -->
+            <text x="88" y="165" text-anchor="middle" font-size="11" font-weight="bold" fill="#0F172A" transform="rotate(-90 88,165)">26.0" TOTAL HEIGHT</text>
+            <text x="230" y="303" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#16A34A">2.5" Stile + 7.75" Rail + 2.5" Stile = 12.75" Exact Width</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>Rattan Door Step 2: How to Route the "Stepped Rabbet Groove" on the Back</span>
+        <span class="rattan-badge">3/8" Wide x 3/8" Deep Stepped Groove</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <p>Do <strong>not</strong> try to cut loose grooves on individual sticks before gluing—and do not route a spline channel on the front face. Instead, route a <strong><code>3/8" W x 3/8" D</code> Rear Stepped Groove (Rabbet)</strong> <em>after</em> the rectangular frame is glued and screwed together:</p>
+          <ul class="step-list">
+            <li><strong>1. Chuck a 3/8" Rabbeting Bit into Your Router:</strong> A rabbeting bit has a spinning pilot bearing at the tip that rides smoothly along the inside window of your door frame, guaranteeing a uniform <code>3/8"</code> wide step with zero fence required.</li>
+            <li><strong>2. Set Bit Depth to 3/8" (Half of the 3/4" Board):</strong> Since your <code>1x3</code> board is <code>3/4" (0.75")</code> thick, setting the cutting depth to <code>3/8" (0.375")</code> leaves a strong <code>3/8"</code> front lip and carves a recessed <code>3/8"</code> shelf on the back.</li>
+            <li><strong>3. Route Around the Back Inside Window:</strong> Lay the assembled door <strong>back-side up</strong> on your workbench. Run the router clockwise around the inside perimeter.</li>
+            <li><strong>4. Square (or Leave) the Corners & Paint the Frame NOW:</strong> Before touching the rattan, prime and paint your 4 routed wood frames in Swedish Blue. That way you never get blue paint splatters on the natural golden rattan!</li>
+          </ul>
+        </div>
+
+        <div class="svg-box">
+          <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="460" height="280" fill="#F8FAFC"/>
+            <text x="230" y="22" text-anchor="middle" font-weight="bold" font-size="12" fill="#0F172A">SIDE CROSS-SECTION OF THE ROUTED DOOR GROOVE (RABBET)</text>
+
+            <!-- Wood Stile with Routed L-Step -->
+            <g transform="translate(70, 50)">
+              <!-- L-shaped 1x3 Stile Cross Section -->
+              <polygon points="0,0 200,0 200,85 115,85 115,170 0,170" fill="#4A6B82" stroke="#0F172A" stroke-width="2.5"/>
+              <text x="58" y="135" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">1x3 DOOR STILE</text>
+              <text x="58" y="150" text-anchor="middle" fill="#E2E8F0" font-size="10">(0.75" Thick Total)</text>
+
+              <text x="157" y="45" text-anchor="middle" fill="#FFF" font-size="10" font-weight="bold">3/8" Front Lip</text>
+
+              <!-- The Routed 3/8" x 3/8" Step Callout -->
+              <rect x="115" y="85" width="85" height="85" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <text x="265" y="105" font-size="10.5" font-weight="bold" fill="#DC2626">&larr; Routed 3/8" x 3/8" Step</text>
+
+              <!-- Rattan Sheet Pressed Into Step -->
+              <rect x="122" y="87" width="78" height="12" fill="#D4A359" stroke="#78350F" stroke-width="1.5"/>
+              <rect x="122" y="99" width="12" height="115" fill="#D4A359" stroke="#78350F" stroke-width="1.5"/>
+              <text x="265" y="128" font-size="10.5" font-weight="bold" fill="#B45309">&larr; Soaked Rattan Webbing</text>
+
+              <!-- T50 Staple -->
+              <path d="M 155,105 L 155,70 L 175,70 L 175,105" fill="none" stroke="#DC2626" stroke-width="3"/>
+              <text x="265" y="148" font-size="10.5" font-weight="bold" fill="#0F172A">&larr; 3/8" T50 Staple + Glue</text>
+
+              <!-- 1/4" x 3/8" Wood Backing Strip Sandwiching the Rattan -->
+              <rect x="136" y="102" width="64" height="66" fill="#F3E5AB" stroke="#0F172A" stroke-width="2"/>
+              <text x="168" y="135" text-anchor="middle" font-size="9.5" font-weight="bold">1/4"x3/8"</text>
+              <text x="168" y="148" text-anchor="middle" font-size="9">Trim Strip</text>
+              <text x="265" y="168" font-size="10.5" font-weight="bold" fill="#16A34A">&larr; Trim Strip Hides Staples!</text>
+
+              <!-- Front vs Back Labels -->
+              <text x="100" y="-10" text-anchor="middle" font-size="11" font-weight="bold" fill="#0F172A">FRONT OF DOOR (Faces Living Room)</text>
+              <text x="100" y="195" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">BACK OF DOOR (Faces Inside Cabinet)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>Rattan Door Step 3: Soaking, Stapling & Drilling the 35mm Hinge Cups</span>
+        <span class="rattan-badge">Drum-Tight Shrink Fit</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <ul class="step-list">
+            <li><strong>1. Cut & Soak Rattan in Warm Water (30–45 Mins):</strong> Cut 4 pieces of rattan webbing to <strong><code>8.5" Wide x 21.75" High</code></strong> with scissors. Submerge them in your bathtub or sink in warm water for 35 minutes. Water expands the natural cane fibers and makes them pliable so they won't crack when bent into the groove.</li>
+            <li><strong>2. Staple Opposite Sides Under Tension:</strong> Shake off excess water and lay the wet rattan into the painted back groove. Staple the <strong>Top edge</strong> first with <code>3/8"</code> T50 staples every <code>1.5"</code>. Pull taut and staple the <strong>Bottom edge</strong>, then alternate <strong>Left and Right sides</strong> while keeping the grid lines parallel to the frame.</li>
+            <li><strong>3. Glue & Pin the 1/4" Backing Strips:</strong> Run a thin bead of wood glue over the staples inside the groove and press your <code>1/4" x 3/8"</code> pine lattice strips into the groove with a few <code>5/8"</code> brads. Trim any stray cane ends flush with a utility knife. Within 4 hours of drying, the rattan shrinks as tight as a snare drum!</li>
+            <li><strong>4. Drill the Two 35mm Hinge Cups:</strong> Clamp your Kreg Concealed Hinge Jig onto the back of the outer <code>2.5"</code> stile at <strong><code>3.5"</code> from the top</strong> and <strong><code>3.5"</code> from the bottom</strong> (plenty of room away from the pocket screws). Drill the two <code>35mm</code> cups and screw in your Blum hinges.</li>
+          </ul>
+        </div>
+
+        <div class="svg-box">
+          <svg viewBox="0 0 460 270" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="460" height="270" fill="#F8FAFC"/>
+            <text x="230" y="20" text-anchor="middle" font-weight="bold" font-size="12" fill="#0F172A">PAIR OF FINISHED DOORS OVER ONE 26.5" BASE BOX</text>
+
+            <g transform="translate(65, 35)">
+              <!-- 1x2 Face Frame Behind (24.5" W Opening) -->
+              <rect x="0" y="0" width="330" height="200" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5,3"/>
+
+              <!-- Left Rattan Door (12.75" W x 26.0" H) -->
+              <rect x="12" y="10" width="151" height="180" fill="#4A6B82" stroke="#0F172A" stroke-width="2"/>
+              <rect x="38" y="36" width="99" height="128" fill="url(#rattanMesh)" stroke="#0F172A" stroke-width="1.5"/>
+              <!-- Hinge Cups on Left Stile -->
+              <circle cx="25" cy="35" r="7" fill="#CBD5E1" stroke="#DC2626" stroke-width="1.5"/>
+              <circle cx="25" cy="165" r="7" fill="#CBD5E1" stroke="#DC2626" stroke-width="1.5"/>
+              <!-- Brass Knob -->
+              <circle cx="150" cy="100" r="4.5" fill="#FDE047" stroke="#0F172A"/>
+
+              <!-- Right Rattan Door (12.75" W x 26.0" H) -->
+              <rect x="167" y="10" width="151" height="180" fill="#4A6B82" stroke="#0F172A" stroke-width="2"/>
+              <rect x="193" y="36" width="99" height="128" fill="url(#rattanMesh)" stroke="#0F172A" stroke-width="1.5"/>
+              <!-- Hinge Cups on Right Stile -->
+              <circle cx="305" cy="35" r="7" fill="#CBD5E1" stroke="#DC2626" stroke-width="1.5"/>
+              <circle cx="305" cy="165" r="7" fill="#CBD5E1" stroke="#DC2626" stroke-width="1.5"/>
+              <!-- Brass Knob -->
+              <circle cx="180" cy="100" r="4.5" fill="#FDE047" stroke="#0F172A"/>
+
+              <text x="87" y="207" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0F172A">Door A: 12.75" W</text>
+              <text x="242" y="207" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#0F172A">Door B: 12.75" W</text>
+              <text x="165" y="224" text-anchor="middle" font-size="10" font-weight="bold" fill="#DC2626">Red Circles = 35mm Blum Hinge Cups (3.5" From Top & Bottom)</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TAB 7: FACE FRAMES, HEADER & CROWN ==================== -->
+  <section id="tab-trim" class="tab-section">
+    <div class="card">
+      <div class="card-title">
+        <span>Top 1x4 Header, 3-1/4" Crown Moulding & 1x2 Face-Frame Reference</span>
+        <span class="step-badge">Final Trim Details</span>
+      </div>
+      <p>Once your base boxes, butcher block countertops, upper 1x12 bookcases, and 4 rattan doors are built, wrap the top ceiling joint with the <code>1x4</code> header board and <code>3-1/4"</code> crown moulding:</p>
+      <div class="svg-box">
+        <svg viewBox="0 0 860 250" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="860" height="250" fill="#F8FAFC"/>
+          <!-- Left Diagram: Header + Crown -->
+          <g transform="translate(20, 15)">
+            <text x="190" y="15" text-anchor="middle" font-weight="bold" font-size="11.5">A. CEILING HEADER & CROWN CROSS-SECTION</text>
+            <rect x="20" y="25" width="340" height="18" fill="#CBD5E1" stroke="#0F172A" stroke-width="1.5"/>
+            <text x="190" y="38" text-anchor="middle" font-size="10" font-weight="bold">CEILING (86.5" H)</text>
+            <rect x="20" y="43" width="18" height="170" fill="#CBD5E1" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="38" y="43" width="210" height="14" fill="#FEF2F2" stroke="#DC2626" stroke-dasharray="3,2"/>
+            <text x="143" y="53" text-anchor="middle" font-size="9.5" fill="#DC2626" font-weight="bold">0.5" Ceiling Clearance Gap</text>
+            <rect x="38" y="57" width="210" height="16" fill="#F3E5AB" stroke="#0F172A" stroke-width="1.5"/>
+            <text x="143" y="69" text-anchor="middle" font-size="9.5" font-weight="bold">Top 1x12 Shelf (At 86.0" H)</text>
+            <rect x="248" y="43" width="18" height="78" fill="#4A6B82" stroke="#0F172A" stroke-width="2"/>
+            <polygon points="266,43 318,43 266,95" fill="#64748B" stroke="#0F172A" stroke-width="2"/>
+            <text x="330" y="75" font-size="10" font-weight="bold">&larr; 3.25" Crown</text>
+            <text x="325" y="110" font-size="10" font-weight="bold" fill="#2C4251">&larr; 1x4 Header</text>
+          </g>
+
+          <!-- Right Diagram: 1x2 Center Stile with 2 Pairs of Doors -->
+          <g transform="translate(440, 15)">
+            <text x="190" y="15" text-anchor="middle" font-weight="bold" font-size="11.5">B. TOP-DOWN: 1x2 STILES & RATTAN DOORS</text>
+            <rect x="160" y="35" width="30" height="85" fill="#E2C799" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="190" y="35" width="30" height="85" fill="#E2C799" stroke="#0F172A" stroke-width="1.5"/>
+            <rect x="160" y="120" width="60" height="26" fill="#4A6B82" stroke="#0F172A" stroke-width="2"/>
+            <text x="190" y="137" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="bold">1x2 Center Stile</text>
+            <rect x="35" y="152" width="145" height="24" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <text x="107" y="168" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="bold">Box 1 Right Door (0.5" Overlap)</text>
+            <rect x="200" y="152" width="145" height="24" fill="#2C4251" stroke="#0F172A" stroke-width="1.5"/>
+            <text x="272" y="168" text-anchor="middle" fill="#FFF" font-size="9.5" font-weight="bold">Box 2 Left Door (0.5" Overlap)</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function openTab(tabId, btn) {
+    document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function toggleRow(checkbox) {
+    const row = checkbox.closest('tr');
+    if (checkbox.checked) {
+      row.classList.add('checked-row');
+      localStorage.setItem(checkbox.id, 'true');
+    } else {
+      row.classList.remove('checked-row');
+      localStorage.removeItem(checkbox.id);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      if (localStorage.getItem(cb.id) === 'true') {
+        cb.checked = true;
+        cb.closest('tr').classList.add('checked-row');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
